@@ -33,7 +33,7 @@ export default function App() {
           console.log("Verification started. Session ID:", sessionId);
         }}
         onSuccess={(sessionId) => {
-          console.log("Verification successful. Session ID:", sessionId);
+          console.log("Verification form submitted. Session ID:", sessionId);
         }}
         onComplete={(sessionId) => {
           console.log("Verification completed. Session ID:", sessionId);

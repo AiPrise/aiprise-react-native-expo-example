@@ -188,7 +188,7 @@ The primary interactive component that renders a launch button and manages the v
 | :--- | :--- | :--- |
 | `onStart` | `(sessionId?: string) => void` | Invoked when the verification flow opens. |
 | `onResume` | `(sessionId?: string) => void` | Invoked when an existing session resumes. |
-| `onSuccess` | `(sessionId?: string) => void` | Invoked when the user successfully passes verification. |
+| `onSuccess` | `(sessionId?: string) => void` | Invoked when the user completes and submits the verification form (note: final KYC decision is delivered asynchronously via webhook). |
 | `onComplete` | `(sessionId?: string) => void` | Invoked when the user finishes all verification steps. |
 | `onError` | `(errorCode: string) => void` | Invoked when an error occurs during the verification flow. |
 | `onAbandoned` | `(sessionId?: string) => void` | Invoked if the user closes or dismisses the flow before completing. |
@@ -212,7 +212,7 @@ import { AiPriseButton } from "aiprise-react-native-sdk";
     console.log("Verification started with session ID:", sessionId);
   }}
   onSuccess={(sessionId) => {
-    console.log("Verification completed successfully:", sessionId);
+    console.log("Verification form submitted with session ID:", sessionId);
   }}
   onComplete={(sessionId) => {
     console.log("Session completed:", sessionId);
